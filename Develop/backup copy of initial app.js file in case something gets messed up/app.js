@@ -18,15 +18,6 @@ const teamMembers = [];
 const idArray = [];
 
 
-// adding validate function to save space
-function validCheck(answer) {
-    if (answer !== "") {
-      return true;
-    }
-    return "Please enter at least one character."
-  }
-
-
 // STUDENT: This function generates all the questions for creating the manager. You need to add more to this.
 function createManager(){
   console.log("Please build your team");
@@ -36,21 +27,16 @@ function createManager(){
       name: "managerName",
       message: "What is your manager's name?",
       // Note how the validate function works
-      // cool function but i dont wanna write that every time
       validate: answer => {
-        validCheck(answer)
+        if (answer !== "") {
+          return true;
+        }
+        return "Please enter at least one character.";
       }
     },
 
     // STUDENT: Add other questions here!
-    {
-      type: "input",
-      name: "managerEmail",
-      message: "What is your manager's email?"
-      validate: answer => {
-        validCheck(answer)
-      }
-    }
+
 
     ]).then(answers => {
       // STUDENT: Process the response by instatiating a new object in the Manager class
