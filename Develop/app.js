@@ -51,6 +51,14 @@ function createManager(){
         validCheck(answer)
       }
     }
+    {
+      type: "input",
+      name: "managerId",
+      message: "What is your manager's ID number?"
+      validate: answer => {
+        validCheck(answer)
+      }
+    }
 
     ]).then(answers => {
       // STUDENT: Process the response by instatiating a new object in the Manager class
