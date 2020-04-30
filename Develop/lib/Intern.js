@@ -19,4 +19,4 @@ class SamplePerson extends ParentSomething {
       
   }
   
-  module.exports = intern
+  module.exports = intern;

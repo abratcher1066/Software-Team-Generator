@@ -12,6 +12,8 @@
 
 // Basic class structure:
 
+const Employee = require("./Employee")
+
 class Manager extends Employee {
     constructor(prop1, prop2) {
       super(prop1, prop2);
@@ -29,8 +31,7 @@ class Manager extends Employee {
       
   }
   
-  module.exports = intern;
-const Employee = require("./Employee")
+
 
 class Manager extends Employee {
     constructor (name, email, id)

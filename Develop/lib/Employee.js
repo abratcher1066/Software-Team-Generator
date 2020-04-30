@@ -11,25 +11,31 @@
 //   * getEmail()
 //   * getRole() // Returns 'Employee'
 
-class Employee {
-    constructor()
 
-}
-class Employee 
-// extends ParentSomething {
-//     constructor(prop1, prop2) {
-//       super(prop1, prop2);
-//       this.prop1 = prop1;
-//       this.prop2 = prop2;
-//     }
-  
-    getProp1() {
-      // return something...
+class Employee {
+    constructor(name, email, id) {
+    //   super(prop1, prop2); THIS IS A PARENT
+      this.name = name;
+      this.email = email;
+      this.id = id;
+
     }
   
-    setProp1() {
-      // do something...
+    getName() {
+      // return something...
+      return this.name
+    }
+  
+    getEmail() {
+      return this.email;
+    }
+
+    getRole() {
+        //   * getRole() // Returns 'Employee'
+        return 'Employee'
     }
       
   }
 module.exports = Employee;
+
+// TODO: Write code to define and export the Employee class
