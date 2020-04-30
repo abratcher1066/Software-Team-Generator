@@ -63,18 +63,21 @@ function createManager(){
     {
       type: "input",
       name: "managerEmail",
-      message: "What is your manager's email?"
+      message: "What is your manager's email?",
       validate: answer => {
         validChars(answer)
-      }
-    }
+      },
+    },
     {
       type: "input",
       name: "managerId",
-      message: "What is your manager's ID number?"
+      message: "What is your manager's ID number?",
       validate: answer => {
-        validChars(answer)
-      }
+        validChars(answer);
+      },
+      validate: answer => {
+        validId(answer);
+      },
     }
 
     ]).then(answers => {
@@ -85,22 +88,20 @@ function createManager(){
       // push new manager to team here later //
       // push to team
       teamMembers.push(manager);
-      idArray.push(answers.managerId)
+      idArray.push(answers.managerId);
 
       // Now call the next question set
       createTeam();
-    });q
+    });
 }
 
 // This function starts team creation.
 function createTeam() {
   inquirer.prompt([
-    // STUDENT: Ask which type of team member should be created with a list of choices
-    // [TEST THIS ON ITS OWN]
         type: 'list',
         name: 'addnewteammember',
-        message: "Choose a new team member to add from the list."
-        // choices: [manager, intern, engineer, other employee]
+        message: "Choose a new team member to add from the list.",
+        choices: ['manager', 'intern', 'engineer', 'other employee', 'finished']
 
 
   ]).then(userChoice => {
@@ -116,9 +117,11 @@ function createTeam() {
         case 'engineer':
           addEngineer();
           break;
-        case 'employee':
+        case 'other employee':
           addEmployee();
           break;
+        case 'finished':
+          renderHTMLpage();
       }
 
   });
@@ -128,7 +131,6 @@ function createTeam() {
 function createEngineer() {
   inquirer.prompt([
     // STUDENT:  Engineer questions
-
     {
       type: "input",
       name: "engineerName",
@@ -137,22 +139,23 @@ function createEngineer() {
         validChars(answer)
       }
     },
-
-    // STUDENT: Add other questions here!
     {
       type: "input",
       name: "engineerEmail",
-      message: "What is your engineer's email?"
+      message: "What is your engineer's email?",
       validate: answer => {
         validChars(answer)
       }
-    }
+    },
     {
       type: "input",
       name: "engineerId",
-      message: "What is your engineers's ID number?"
+      message: "What is your engineers's ID number?",
       validate: answer => {
         validChars(answer)
+      },
+      validate: answer => {
+        validId(answer)
       }
     }
 
@@ -163,11 +166,14 @@ function createEngineer() {
     // then take the data supplied and 
     // instantiate the Engineer constructor.
       var engineer = new Engineer(userChoice.engineerName, userChoice.engineerEmail, userChoice.engineerId)
-      teamMembers.push(engineer);
+
+
     // STUDENT: When finished:
        // Add the new object to the team member array
        // Pass control back to the createTeam() function
-
+       teamMembers.push(engineer);
+       idArray.push(userChoice.engineerId);
+       createTeam();
   });
 }
 
