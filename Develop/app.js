@@ -52,14 +52,10 @@ function createManager(){
       type: "input",
       name: "managerName",
       message: "What is your manager's name?",
-      // Note how the validate function works
-      // cool function but i dont wanna write that every time
       validate: answer => {
         validChars(answer)
       }
     },
-
-    // STUDENT: Add other questions here!
     {
       type: "input",
       name: "managerEmail",
@@ -81,16 +77,13 @@ function createManager(){
     }
 
     ]).then(answers => {
-      // STUDENT: Process the response by instatiating a new object in the Manager class
       const manager = new Manager(answers.managerName, answers.managerEmail, answers.managerId);
       teamMembers.push(manager);
       idArray.push(answers.managerId);
-      // Now call the next question set
       createTeam();
     });
 }
 
-// This function starts team creation.
 function createTeam() {
   inquirer.prompt([
     {
@@ -122,10 +115,8 @@ function createTeam() {
   });
 }
 
-// This function starts team creation.
 function createEngineer() {
   inquirer.prompt([
-    // STUDENT:  Engineer questions
     {
       type: "input",
       name: "engineerName",
@@ -160,19 +151,81 @@ function createEngineer() {
     
     // then take the data supplied and 
     // instantiate the Engineer constructor.
+    // Add the new object to the team member array
+    // Pass control back to the createTeam() function
       var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId)
-
-
-    // STUDENT: When finished:
-       // Add the new object to the team member array
-       // Pass control back to the createTeam() function
-       teamMembers.push(engineer);
-       idArray.push(answers.engineerId);
-       createTeam();
+      teamMembers.push(engineer);
+      idArray.push(answers.engineerId);
+      createTeam();
   });
 }
 
 // STUDENT: Now create a function for creating an Intern using the code above as an example
+function createIntern() {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "internName",
+      message: "What is your intern's name?",
+      validate: answer => {
+        validChars(answer)
+      }
+    },
+    {
+      type: "input",
+      name: "internEmail",
+      message: "What is your intern's email?",
+      validate: answer => {
+        validChars(answer)
+      }
+    },
+    {
+      type: "input",
+      name: "internId",
+      message: "What is your intern's ID number?",
+      validate: answer => {
+        validChars(answer)
+      },
+      validate: answer => {
+        validId(answer)
+      }
+    }
+
+  ]).then(answers => {
+    // STUDENT: Make sure the id supplied is unique,
+    // gonna need a function for that.........................................
+    
+    // then take the data supplied and 
+    // instantiate the Engineer constructor.
+    // Add the new object to the team member array
+    // Pass control back to the createTeam() function
+      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId)
+      teamMembers.push(engineer);
+      idArray.push(answers.engineerId);
+      createTeam();
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // STUDENT: This function will call the render function required near the top (line 12), 

@@ -9,6 +9,7 @@
 //   * getSchool()
 
 //   * getRole() // Overridden to return 'Intern'
+const Employee = require("./Employee")
 
 class Intern extends Employee {
     constructor(name, email, id) {
@@ -26,4 +27,4 @@ class Intern extends Employee {
       
   }
   
-  module.exports = intern;
+  module.exports = Intern;
