@@ -97,16 +97,16 @@ function createTeam() {
     // If no choice is made, then go to the rendering function.
       switch (userChoice.addnewteammember) {
         case 'manager':
-          addManager();
+          createManager();
           break;
         case 'intern':
-          addIntern();
+          createIntern();
           break;
         case 'engineer':
-          addEngineer();
+          createEngineer();
           break;
         case 'other employee':
-          addEmployee();
+          createEmployee();
           break;
         case 'finished':
           renderHTMLpage();
@@ -232,8 +232,8 @@ function createIntern() {
 // and pass INTO it the teamMembers area; from there, write the HTML returned back to a file 
 // in a directory called output.
 function renderHtmlPage(){
-
-
+  let html = render(teamMembers)
+  // fs goes here
 
 }
 
