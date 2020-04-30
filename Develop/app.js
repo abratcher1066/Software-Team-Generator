@@ -62,6 +62,8 @@ function createManager(){
 
     ]).then(answers => {
       // STUDENT: Process the response by instatiating a new object in the Manager class
+      const manager = new Manager(answers.managerName, answers.managerEmail, answers.managerId);
+      // going back to make manager object constructor
 
 
       // Now call the next question set
