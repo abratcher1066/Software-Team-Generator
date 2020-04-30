@@ -83,13 +83,8 @@ function createManager(){
     ]).then(answers => {
       // STUDENT: Process the response by instatiating a new object in the Manager class
       const manager = new Manager(answers.managerName, answers.managerEmail, answers.managerId);
-      // going back to make manager object
-
-      // push new manager to team here later //
-      // push to team
       teamMembers.push(manager);
       idArray.push(answers.managerId);
-
       // Now call the next question set
       createTeam();
     });
@@ -159,20 +154,20 @@ function createEngineer() {
       }
     }
 
-  ]).then(userChoice => {
+  ]).then(answers => {
     // STUDENT: Make sure the id supplied is unique,
     // gonna need a function for that.........................................
     
     // then take the data supplied and 
     // instantiate the Engineer constructor.
-      var engineer = new Engineer(userChoice.engineerName, userChoice.engineerEmail, userChoice.engineerId)
+      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId)
 
 
     // STUDENT: When finished:
        // Add the new object to the team member array
        // Pass control back to the createTeam() function
        teamMembers.push(engineer);
-       idArray.push(userChoice.engineerId);
+       idArray.push(answers.engineerId);
        createTeam();
   });
 }
