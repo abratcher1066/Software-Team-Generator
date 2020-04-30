@@ -52,28 +52,28 @@ function createManager(){
       type: "input",
       name: "managerName",
       message: "What is your manager's name?",
-      validate: answer => {
-        validChars(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // }
     },
     {
       type: "input",
       name: "managerEmail",
       message: "What is your manager's email?",
-      validate: answer => {
-        validChars(answer)
-      },
+      // validate: answer => {
+      //   validChars(answer)
+      // },
     },
     {
       type: "input",
       name: "managerId",
       message: "What is your manager's ID number?",
-      validate: answer => {
-        validChars(answer);
-      },
-      validate: answer => {
-        validId(answer);
-      },
+      // validate: answer => {
+      //   validChars(answer);
+      // },
+      // validate: answer => {
+      //   validId(answer);
+      // },
     }
 
     ]).then(answers => {
@@ -97,16 +97,16 @@ function createTeam() {
     // If no choice is made, then go to the rendering function.
       switch (userChoice.addnewteammember) {
         case 'manager':
-          addManager();
+          createManager();
           break;
         case 'intern':
-          addIntern();
+          createIntern();
           break;
         case 'engineer':
-          addEngineer();
+          createEngineer();
           break;
         case 'other employee':
-          addEmployee();
+          createEmployee();
           break;
         case 'finished':
           renderHTMLpage();
@@ -121,28 +121,28 @@ function createEngineer() {
       type: "input",
       name: "engineerName",
       message: "What is your engineer's name?",
-      validate: answer => {
-        validChars(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // }
     },
     {
       type: "input",
       name: "engineerEmail",
       message: "What is your engineer's email?",
-      validate: answer => {
-        validChars(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // }
     },
     {
       type: "input",
       name: "engineerId",
       message: "What is your engineers's ID number?",
-      validate: answer => {
-        validChars(answer)
-      },
-      validate: answer => {
-        validId(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // },
+      // validate: answer => {
+      //   validId(answer)
+      // }
     }
 
   ]).then(answers => {
@@ -167,28 +167,28 @@ function createIntern() {
       type: "input",
       name: "internName",
       message: "What is your intern's name?",
-      validate: answer => {
-        validChars(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // }
     },
     {
       type: "input",
       name: "internEmail",
       message: "What is your intern's email?",
-      validate: answer => {
-        validChars(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // }
     },
     {
       type: "input",
       name: "internId",
       message: "What is your intern's ID number?",
-      validate: answer => {
-        validChars(answer)
-      },
-      validate: answer => {
-        validId(answer)
-      }
+      // validate: answer => {
+      //   validChars(answer)
+      // },
+      // validate: answer => {
+      //   validId(answer)
+      // }
     }
 
   ]).then(answers => {
@@ -232,8 +232,8 @@ function createIntern() {
 // and pass INTO it the teamMembers area; from there, write the HTML returned back to a file 
 // in a directory called output.
 function renderHtmlPage(){
-
-
+  let html = render(teamMembers)
+  // fs goes here
 
 }
 
