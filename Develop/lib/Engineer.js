@@ -13,20 +13,20 @@
   // * getRole() // Overridden to return 'Engineer'
 
 class Engineer extends Employee {
-  constructor(prop1, prop2) {
-    super(prop1, prop2);
-    this.prop1 = prop1;
-    this.prop2 = prop2;
+  constructor(name, email, id, github) {
+    super(name, enmail, id, github);
+    this.github = github;
   }
 
-  getProp1() {
-    // return something...
+  getGithub() {
+    return this.github
   }
 
-  setProp1() {
-    // do something...
+  setRole() {
+    return "Engineer";
   }
-    
 }
+    
+
 
 module.exports = Engineer;

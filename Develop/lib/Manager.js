@@ -8,17 +8,17 @@
 const Employee = require("./Employee")
 
 class Manager extends Employee {
-    constructor(name, email, id, officeNumber) {
-        // call object parent stuff with super
+  constructor(name, email, id, officeNumber) {
+    // call object parent stuff with super
     super(name, email, id);
-      // need ot define new object property AND make it retrievable
+    // need ot define new object property AND make it retrievable
     this.officeNumber = officeNumber;
     }
     getRole() {
         return 'Manager';
     }
     getOfficeNumber() {
-        return this.officeNumbe
+        return this.officeNumber;
     }
   }
 

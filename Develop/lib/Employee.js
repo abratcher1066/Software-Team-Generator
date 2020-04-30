@@ -13,17 +13,16 @@
 
 
 class Employee {
-    constructor(name, email, id) {
-    //   super(prop1, prop2); THIS IS A PARENT
-      this.name = name;
-      this.email = email;
-      this.id = id;
-
+  constructor(name, email, id) {
+    //super(prop1, prop2); THIS IS A PARENT
+    this.name = name;
+    this.email = email;
+    this.id = id;
     }
   
     getName() {
-      // return something...
-      return this.name
+    // return something...
+    return this.name
     }
   
     getEmail() {
@@ -34,7 +33,6 @@ class Employee {
         //   * getRole() // Returns 'Employee'
         return 'Employee'
     }
-      
   }
 module.exports = Employee;
 

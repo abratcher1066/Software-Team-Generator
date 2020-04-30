@@ -66,22 +66,42 @@ function createManager(){
       // going back to make manager object
 
       // push new manager to team here later //
-      // CODE
+      // push to team
+      teamMembers.push(manager);
+      idArray.push(answers.managerId)
 
       // Now call the next question set
       createTeam();
-    });
+    });q
 }
 
 // This function starts team creation.
 function createTeam() {
   inquirer.prompt([
     // STUDENT: Ask which type of team member should be created with a list of choices
+    // [TEST THIS ON ITS OWN]
+        type: 'list',
+        name: 'addnewteammember',
+        message: "Choose a new team member to add from the list."
+        // choices: [manager, intern, engineer, other employee]
+
 
   ]).then(userChoice => {
     // STUDENT: Based on which choice they make, call the correct function to ask more questions.
     // If no choice is made, then go to the rendering function.
+      switch (userChoice.addnewteammember) {
+        case 'manager':
+          //code
+        case 'intern':
+          //code
+        case 'engineer':
+          //code
+        case 'employee'
+          //code
+        
 
+
+      }
 
   });
 }
@@ -91,10 +111,37 @@ function createEngineer() {
   inquirer.prompt([
     // STUDENT:  Engineer questions
 
+    {
+      type: "input",
+      name: "engineerName",
+      message: "What is your engineer's name?",
+      validate: answer => {
+        validCheck(answer)
+      }
+    },
+
+    // STUDENT: Add other questions here!
+    {
+      type: "input",
+      name: "engineerEmail",
+      message: "What is your engineer's email?"
+      validate: answer => {
+        validCheck(answer)
+      }
+    }
+    {
+      type: "input",
+      name: "engineerId",
+      message: "What is your engineers's ID number?"
+      validate: answer => {
+        validCheck(answer)
+      }
+    }
+
   ]).then(userChoice => {
     // STUDENT: Make sure the id supplied is unique, then take the data supplied and 
     // instantiate the Engineer constructor.
-    
+      var engineer = new Engineer(userChoice.
     
     // STUDENT: When finished:
        // Add the new object to the team member array
@@ -110,6 +157,8 @@ function createEngineer() {
 // and pass INTO it the teamMembers area; from there, write the HTML returned back to a file 
 // in a directory called output.
 function renderHtmlPage(){
+
+
 
 }
 
