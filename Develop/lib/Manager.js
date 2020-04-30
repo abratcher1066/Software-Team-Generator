@@ -10,20 +10,29 @@
 
 //   * getRole() // Overridden to return 'Manager'
 
-// Basic class structure:
-
 const Employee = require("./Employee")
 
 class Manager extends Employee {
-    constructor(prop1, prop2) {
-      super(prop1, prop2);
-      this.prop1 = prop1;
-      this.prop2 = prop2;
+    constructor(name, email, id, officeNumber) {
+        // call object parent stuff with super
+      super(name, email, id);
+      // need ot define new object property AND make it retrievable
+    //   this.prop1 = prop1;
+    //   this.prop2 = prop2;
+    this.officeNumber = officeNumber;
+    // this.role = role;
     }
-  
-    getProp1() {
+    // and if anyone asks what this is
+    // ie.  * getRole() // Returns 'Employee'
+    getRole() {
       // return something...
+    return 'Manager';
     }
+    getOfficeNumber() {
+        return this.officeNumber
+
+    }
+
   
     setProp1() {
       // do something...

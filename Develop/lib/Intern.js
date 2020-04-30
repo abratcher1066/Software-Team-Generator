@@ -2,7 +2,15 @@
 
 // Basic class structure:
 
-class SamplePerson extends ParentSomething {
+// In addition to `Employee`'s properties and methods, `Intern` will also have:
+
+//   * school 
+
+//   * getSchool()
+
+//   * getRole() // Overridden to return 'Intern'
+
+class Intern extends Employee {
     constructor(prop1, prop2) {
       super(prop1, prop2);
       this.prop1 = prop1;

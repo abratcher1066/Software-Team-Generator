@@ -4,7 +4,15 @@
 
 // Basic class structure:
 
-class SamplePerson extends ParentSomething {
+// In addition to `Employee`'s properties and methods, `Engineer` will also have:
+
+  // * github  // GitHub username
+
+  // * getGithub()
+
+  // * getRole() // Overridden to return 'Engineer'
+
+class Engineer extends Employee {
   constructor(prop1, prop2) {
     super(prop1, prop2);
     this.prop1 = prop1;
@@ -21,4 +29,4 @@ class SamplePerson extends ParentSomething {
     
 }
 
-module.exports = SamplePerson;
+module.exports = Engineer;
