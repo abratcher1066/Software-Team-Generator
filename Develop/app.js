@@ -17,21 +17,33 @@ const teamMembers = [];
 // This will be an array of the id values created for each object so there are no duplicates
 const idArray = [];
 
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// // char check function
+//      validate: answer => {
+//        validChars(answer)
+//        }
 // adding validate function to save space
-function validCheck(answer) {
+function validChars(answer) {
     if (answer !== "") {
       return true;
     }
     return "Please enter at least one character."
   }
 
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // adding id checker function to make sure each team member has a unique id
-function validId(){
-  if (answers.id)
+function validId(answer){
+  if (idArray.includes(answer)){
+      return "Please choose a unique ID # 0-9."
+  }
+  return true;
 }
-
-
+// ID check function
+//      validate: answer => {
+//        validId(answer)
+//        }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // STUDENT: This function generates all the questions for creating the manager. You need to add more to this.
 function createManager(){
   console.log("Please build your team");
@@ -43,7 +55,7 @@ function createManager(){
       // Note how the validate function works
       // cool function but i dont wanna write that every time
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     },
 
@@ -53,7 +65,7 @@ function createManager(){
       name: "managerEmail",
       message: "What is your manager's email?"
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     }
     {
@@ -61,7 +73,7 @@ function createManager(){
       name: "managerId",
       message: "What is your manager's ID number?"
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     }
 
@@ -122,7 +134,7 @@ function createEngineer() {
       name: "engineerName",
       message: "What is your engineer's name?",
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     },
 
@@ -132,7 +144,7 @@ function createEngineer() {
       name: "engineerEmail",
       message: "What is your engineer's email?"
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     }
     {
@@ -140,7 +152,7 @@ function createEngineer() {
       name: "engineerId",
       message: "What is your engineers's ID number?"
       validate: answer => {
-        validCheck(answer)
+        validChars(answer)
       }
     }
 
