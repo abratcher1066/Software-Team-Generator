@@ -26,6 +26,11 @@ function validCheck(answer) {
     return "Please enter at least one character."
   }
 
+// adding id checker function to make sure each team member has a unique id
+function validId(){
+  if (answers.id)
+}
+
 
 // STUDENT: This function generates all the questions for creating the manager. You need to add more to this.
 function createManager(){
@@ -91,16 +96,17 @@ function createTeam() {
     // If no choice is made, then go to the rendering function.
       switch (userChoice.addnewteammember) {
         case 'manager':
-          //code
+          addManager();
+          break;
         case 'intern':
-          //code
+          addIntern();
+          break;
         case 'engineer':
-          //code
-        case 'employee'
-          //code
-        
-
-
+          addEngineer();
+          break;
+        case 'employee':
+          addEmployee();
+          break;
       }
 
   });
@@ -139,10 +145,13 @@ function createEngineer() {
     }
 
   ]).then(userChoice => {
-    // STUDENT: Make sure the id supplied is unique, then take the data supplied and 
-    // instantiate the Engineer constructor.
-      var engineer = new Engineer(userChoice.
+    // STUDENT: Make sure the id supplied is unique,
+    // gonna need a function for that.........................................
     
+    // then take the data supplied and 
+    // instantiate the Engineer constructor.
+      var engineer = new Engineer(userChoice.engineerName, userChoice.engineerEmail, userChoice.engineerId)
+      teamMembers.push(engineer);
     // STUDENT: When finished:
        // Add the new object to the team member array
        // Pass control back to the createTeam() function
