@@ -98,12 +98,12 @@ function createManager(){
 // This function starts team creation.
 function createTeam() {
   inquirer.prompt([
+    {
         type: 'list',
         name: 'addnewteammember',
         message: "Choose a new team member to add from the list.",
         choices: ['manager', 'intern', 'engineer', 'other employee', 'finished']
-
-
+    }
   ]).then(userChoice => {
     // STUDENT: Based on which choice they make, call the correct function to ask more questions.
     // If no choice is made, then go to the rendering function.
