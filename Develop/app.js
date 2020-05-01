@@ -96,7 +96,7 @@ function createTeam() {
         type: 'list',
         name: 'addnewteammember',
         message: "Choose a new team member to add from the list.",
-        choices: ['manager', 'intern', 'engineer', 'other employee', 'finished']
+        choices: ['manager', 'intern', 'engineer', 'finished']
     }
   ]).then(userChoice => {
     // STUDENT: Based on which choice they make, call the correct function to ask more questions.
@@ -111,9 +111,6 @@ function createTeam() {
         case 'engineer':
           createEngineer();
           break;
-        case 'other employee':
-          createEmployee();
-          break;
         case 'finished':
           renderHtmlPage();
       }
@@ -126,7 +123,7 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerName",
-      message: "What is your engineer's name?",
+      message: "What is your engineer's name?"
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -134,7 +131,7 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerEmail",
-      message: "What is your engineer's email?",
+      message: "What is your engineer's email?"
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -142,7 +139,7 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerId",
-      message: "What is your engineers's ID number?",
+      message: "What is your engineers's ID number?"
       // validate: answer => {
       //   validChars(answer)
       // },
@@ -153,7 +150,7 @@ function createEngineer() {
     {
       type: "input",
       name: "github",
-      message: "What is your engineers's github page?",
+      message: "What is your engineers's github page?"
     }
 
   ]).then(answers => {
@@ -164,7 +161,7 @@ function createEngineer() {
     // instantiate the Engineer constructor.
     // Add the new object to the team member array
     // Pass control back to the createTeam() function
-      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId, answers.engineerGithub)
+      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId, answers.github)
       teamMembers.push(engineer);
       idArray.push(answers.engineerId);
       createTeam();
@@ -177,7 +174,7 @@ function createIntern() {
     {
       type: "input",
       name: "internName",
-      message: "What is your intern's name?",
+      message: "What is your intern's name?"
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -185,7 +182,7 @@ function createIntern() {
     {
       type: "input",
       name: "internEmail",
-      message: "What is your intern's email?",
+      message: "What is your intern's email?"
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -193,13 +190,18 @@ function createIntern() {
     {
       type: "input",
       name: "internId",
-      message: "What is your intern's ID number?",
+      message: "What is your intern's ID number?"
       // validate: answer => {
       //   validChars(answer)
       // },
       // validate: answer => {
       //   validId(answer)
       // }
+    },
+    {
+      type: "input",
+      name: "internSchool",
+      message: "What school is your intern attending?"
     }
 
   ]).then(answers => {
@@ -210,12 +212,13 @@ function createIntern() {
     // instantiate the Engineer constructor.
     // Add the new object to the team member array
     // Pass control back to the createTeam() function
-      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId)
-      teamMembers.push(engineer);
-      idArray.push(answers.engineerId);
+      var intern = new Intern(answers.internName, answers.internEmail, answers.internId, answers.internSchool)
+      teamMembers.push(intern);
+      idArray.push(answers.internId);
       createTeam();
   });
 }
+
 
 
 
