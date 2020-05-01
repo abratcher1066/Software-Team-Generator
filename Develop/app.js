@@ -109,7 +109,7 @@ function createTeam() {
           createEmployee();
           break;
         case 'finished':
-          renderHTMLpage();
+          renderHtmlPage();
       }
 
   });
@@ -233,7 +233,7 @@ function createIntern() {
 // in a directory called output.
 function renderHtmlPage(){
   let html = render(teamMembers)
-  // fs goes here
+  fs.writeFileSync(outputPath, html)
 
 }
 
