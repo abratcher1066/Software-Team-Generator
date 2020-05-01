@@ -74,10 +74,16 @@ function createManager(){
       // validate: answer => {
       //   validId(answer);
       // },
-    }
+    },
+    {
+      type: "input",
+      name: "managerOfficeNumber",
+      message: "What is your manager's office number?"
+       
+     }
 
     ]).then(answers => {
-      const manager = new Manager(answers.managerName, answers.managerEmail, answers.managerId);
+      const manager = new Manager(answers.managerName, answers.managerEmail, answers.managerId, answers.managerOfficeNumber);
       teamMembers.push(manager);
       idArray.push(answers.managerId);
       createTeam();
@@ -143,6 +149,11 @@ function createEngineer() {
       // validate: answer => {
       //   validId(answer)
       // }
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "What is your engineers's github page?",
     }
 
   ]).then(answers => {
@@ -153,7 +164,7 @@ function createEngineer() {
     // instantiate the Engineer constructor.
     // Add the new object to the team member array
     // Pass control back to the createTeam() function
-      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId)
+      var engineer = new Engineer(answers.engineerName, answers.engineerEmail, answers.engineerId, answers.engineerGithub)
       teamMembers.push(engineer);
       idArray.push(answers.engineerId);
       createTeam();

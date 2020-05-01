@@ -21,7 +21,7 @@ class Manager extends Employee {
         return this.officeNumber;
     }
     getId() {
-       return this.id;
+       return this.id
      }
     getEmail(){
       return this.email;
