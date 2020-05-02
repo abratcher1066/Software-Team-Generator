@@ -24,7 +24,7 @@ const idArray = [];
 //        }
 // adding validate function to save space
 function validChars(answer) {
-    if (answer !== "") {
+    if(answer !== "") {
       return true;
     }
     return "Please enter at least one character."
@@ -52,34 +52,26 @@ function createManager(){
       type: "input",
       name: "managerName",
       message: "What is your manager's name?",
-      // validate: answer => {
-      //   validChars(answer)
-      // }
+      validate: validChars
+
     },
     {
       type: "input",
       name: "managerEmail",
       message: "What is your manager's email?",
-      // validate: answer => {
-      //   validChars(answer)
-      // },
+      validate: validChars
     },
     {
       type: "input",
       name: "managerId",
       message: "What is your manager's ID number?",
-      // validate: answer => {
-      //   validChars(answer);
-      // },
-      // validate: answer => {
-      //   validId(answer);
-      // },
+      validate: validChars
     },
     {
       type: "input",
       name: "managerOfficeNumber",
-      message: "What is your manager's office number?"
-       
+      message: "What is your manager's office number?",
+      validate: validChars 
      }
 
     ]).then(answers => {
@@ -123,7 +115,8 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerName",
-      message: "What is your engineer's name?"
+      message: "What is your engineer's name?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -131,7 +124,8 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerEmail",
-      message: "What is your engineer's email?"
+      message: "What is your engineer's email?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -139,7 +133,8 @@ function createEngineer() {
     {
       type: "input",
       name: "engineerId",
-      message: "What is your engineers's ID number?"
+      message: "What is your engineers's ID number?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // },
@@ -150,7 +145,8 @@ function createEngineer() {
     {
       type: "input",
       name: "github",
-      message: "What is your engineers's github page?"
+      message: "What is your engineers's github page?",
+      validate: validChars
     }
 
   ]).then(answers => {
@@ -174,7 +170,8 @@ function createIntern() {
     {
       type: "input",
       name: "internName",
-      message: "What is your intern's name?"
+      message: "What is your intern's name?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -182,7 +179,8 @@ function createIntern() {
     {
       type: "input",
       name: "internEmail",
-      message: "What is your intern's email?"
+      message: "What is your intern's email?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // }
@@ -190,7 +188,8 @@ function createIntern() {
     {
       type: "input",
       name: "internId",
-      message: "What is your intern's ID number?"
+      message: "What is your intern's ID number?",
+      validate: validChars
       // validate: answer => {
       //   validChars(answer)
       // },
@@ -201,7 +200,8 @@ function createIntern() {
     {
       type: "input",
       name: "internSchool",
-      message: "What school is your intern attending?"
+      message: "What school is your intern attending?",
+      validate: validChars
     }
 
   ]).then(answers => {
